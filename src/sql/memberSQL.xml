@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap>
+	<typeAlias alias="memberdto" type="test.TestData" />
+
+	<resultMap id="priceRes" class="memberdto">
+			<result property="id" column="id" />
+			<result property="pass" column="pass" />
+			<result property="name" column="name" />
+	</resultMap>
+
+		<!-- 회원가입 -->
+		<insert id="insertM" parameterClass="memberdto">
+			insert into member values (
+				#id#,
+				#pass#,
+				#name#
+			)
+		</insert>
+		
+</sqlMap>
+
